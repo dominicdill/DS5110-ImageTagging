@@ -79,3 +79,9 @@ This project builds on previous work by DS 5010 students: https://ds5010.github.
 * Data: Socieconomic data from the American Community Survey (census.gov) and broadband data from the FCC (fcc.gov)
 These datasets are entirely new, and were not used in previous work by DS 5010 students.
 The goal of this project is to use publicly available data to investigate possible causal relationships in Maine.
+
+## 7 – Computer Vision
+
+* Stakeholder: Michael Wan, PhD, Senior Computational Scientist in Northeastern’s Augmented Cognition Lab
+* Story/Goal: This computer-vision project will build on and complement a DS 5110 project from fall 2022 that used simple ML models to distinguish adult & infant faces in images. The project will involve traditional machine learning teachniques (i.e., no deep learning).
+* Data: Dr. Wan has been working with facial landmark coordinates from 300-W (adults) and InfAnFace (infants) datasets as described in InfAnFace paper, Wan et al, (2022) (2022) – arxiv.org
