@@ -1,23 +1,9 @@
-
-# guidance
-
-Revised project timeline
-
-| Milestone                 | Deadline | --- |
-| ---                       | ---      | --- 
-| Project & team identified | 14 Feb   | repo |
-| Plan                      | 24 Mar   | Friday |
-| Check-in                  | 31 Mar   | Friday |
-| Presentations             | 18 Apr   | Tuesday (in class) |
-| Final submission          | 25 Apr   | Submission |
-
-## plan.md -- due March 22
-
-In the main directory of your project repo create a `plan.md` file with the following sections:
+# Plan
 
 * Goals
-  * One paragraph description of the project goals -- may be a restatement or revision.
-  * This can be an updated version of "the story" based on any work accomplished so far.
+
+The Institute for Experiental AI is f
+
 * Data
   * Description of the dataset.
   * Include any data-accessibility issues encountered or anticipated.
@@ -39,20 +25,3 @@ In the main directory of your project repo create a `plan.md` file with the foll
 * Issues
   * Deacribe any and all obstacles/risks/challenges, encountered so far and/or anticipated
 
-## Check-in -- due Mar 31
-
-* Half-hour Teams meeting (or in person) with instructor to occur sometime before April 5
-  * You can have as many check-ins as you want, but minimum of one before Turkey Day
-  * It's your responsibility to shedule a check-in meeting
-* Demonstrated progress on the project goals presented with a walk-through of the project repo
-* Should include a submission in canvas with the url of the project repo
-* The repo format should follow the same general guidelines http://github.com/ds5110/git-intro
-* Team should provide a verbal update on stakeholder feedback
-
-## Presentation -- 18 Mar
-
-* 10-minute presentation of results to the class and possibly stakeholders
-
-## Final submission -- 25 Apr
-
-* Final exam day -- no class, no submissions after this date
