@@ -1,29 +1,30 @@
 # Plan
 
-* Goals
+## Goals
 
 The Institute for Experiental AI is f
 
-* Data
+## Data
   * Description of the dataset.
   * Include any data-accessibility issues encountered or anticipated.
-* Stakeholder feedback 
+ 
+## Stakeholder feedback 
   * Briefly describe any feedback that you have received so far from your stakeholder.
   * If you have yet to meet with your stakeholder, then provide a date by which you'll expect to meet with them.
 
 We met with Guilia Taurino, our primary point of contact and stakeholder with the Institute of Experiential AI, on March 27 to discuss the goals for this process. After our initial meeting, we have further honed the focus of our project through email communication. As of April 4, the plan is for Guilia to send a list of images that have been previously run through AWS Rekognition so that we can compare results from our research on the same set of images. 
 
-* EDA
+## EDA
   * One or more figures demonstrating exploratory analysis of the data.
   * Present results following the format of https://github.com/ds5110/git-intro
   * In particular, the repo's README.md should include instructions for reproducibility
 
 As of April 4, we are waiting for a list of images that have already been run through AWS Rekognition. Once we have those images, we can report various descriptive statistics for the image files.
-* descriptive statistics of the file sizes (average, range, median, mode, etc)
-* Are all the photos black and white or are some in color?
+  * descriptive statistics of the file sizes (average, range, median, mode, etc)
+  * Are all the photos black and white or are some in color?
 
 
-* Timeline
+## Timeline
   * Milestones for completion of the project
   * This should include at least one meeting with your stakeholder to review progress and get feedback.
 
@@ -34,14 +35,23 @@ As of April 4, we are waiting for a list of images that have already been run th
 * April 19 - 25 – if necessary, continue researching and refining models, and finalize project repo and front-facing HTML page for submission
 * April 25 - submit project materials
 
-* Roles & responsibilities
+## Roles & responsibilities
   * Briefly describe (list of activities) the way that you've broken down individual contributions by team member.
   * Include plans for a front-facing HTML page or markdown file that presents results concisely for your stakeholder.
     * The front-facing page should be readable by a non-technical audience.
     * Note: put this front-facing page in the `/docs` directory
 
+### Dom
+Research the viability of VGG16 model
 
-* Issues
+### Casey 
+Research the CNN model through fastai python library
+
+### Alex
+Research Google vision and Facebook deepface
+
+
+## Issues
   * Deacribe any and all obstacles/risks/challenges, encountered so far and/or anticipated
 
 There have been numerous challenges so far that have indirectly and directly led to changes in the goals and scope of the project.
