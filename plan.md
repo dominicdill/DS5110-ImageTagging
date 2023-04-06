@@ -2,13 +2,13 @@
 
 ## Goals
 
-The primary goal of this project is to experiment with at least 2 or 3 pre-trained image classification models to compare their ability to classify images from the Boston photo data set. To start, we will experiment with VGG16, FastAI, and Google Vision. We will use a smaller subset of photos that have been previously run through AWS Rekognition by another team so we can compare results.
+This project aims to compare the image classifying capabilities of pre trained models using a collection of images from the Boston Globe. Of the available pre trained mdoels, we have decided to work on implementing VGG16, FastAI, and Google Vision and DeepFace for this project. There will be little, if any, training on the Boston Globe data set. We aim to compare the "out-of-the-box" capabilities of these pre trained models. A small subset of photos that have been previously run through AWS Rekognition by another team will be used as a form of accuracy /comparison check.
 
 ## Data
   * Description of the dataset.
   * Include any data-accessibility issues encountered or anticipated.
 
-The dataset is a collection of digitized black and white photos of Boston that are owned by the NEU library. Presumably, high resolution versions of the photos we will use in our experimentation are available to download; however, downloads take a while so we can only work with small subsets of photos at once. Another limitation is the computing power of the environments we are using to run the pre-trained models. 
+The dataset is a collection of high resolution, digitized photos from Boston Globe collection that the NEU library is working on making publicly accessible. A subset of this dataset has metadata associated with it. Unfortunately, there isn't a collection of these images with metadata that is easily accessible to us. Additionaly, the very high resolution of these images leads to large file sizes, which makes it difficult for personal computers to assess large groups of them quickly. Because of these issues, we will be working with a small subset (~100) of the images (and images only, no metadata). We will use this subset to manually check the validity of the tags produced by the pre trained models. 
  
 ## Stakeholder feedback 
   * Briefly describe any feedback that you have received so far from your stakeholder.
@@ -24,6 +24,7 @@ We met with Guilia Taurino, our primary point of contact and stakeholder with th
 As of April 4, we are waiting for a list of images that have already been run through AWS Rekognition. Once we have those images, we can report various descriptive statistics for the image files.
   * descriptive statistics of the file sizes (average, range, median, mode, etc)
   * Are all the photos black and white or are some in color?
+  * AWS Rekognition output data
 
 
 ## Timeline
@@ -42,7 +43,7 @@ As of April 4, we are waiting for a list of images that have already been run th
     * Note: put this front-facing page in the `/docs` directory
 
 ### Dom
-Research the viability of VGG16 model
+Research the viability of VGG16 and DeepFace model
 
 ### Casey 
 Research the CNN model through fastai python library
