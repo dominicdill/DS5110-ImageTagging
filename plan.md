@@ -25,8 +25,6 @@ As of April 4, we are waiting for a list of images that have already been run th
 
 
 ## Timeline
-  * Milestones for completion of the project
-  * This should include at least one meeting with your stakeholder to review progress and get feedback.
 
 * March 27 - stakeholder kickoff meeting
 * March 28 - April 17 - group members will research their respective pre-trained image classification models and arrive at an initial set of findings
