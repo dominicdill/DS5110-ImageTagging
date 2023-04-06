@@ -2,11 +2,13 @@
 
 ## Goals
 
-The Institute for Experiental AI is f
+The primary goal of this project is to experiment with at least 2 or 3 pre-trained image classification models to compare their ability to classify images from the Boston photo data set. To start, we will experiment with VGG16, FastAI, and Google Vision. We will use a smaller subset of photos that have been previously run through AWS Rekognition by another team so we can compare results.
 
 ## Data
   * Description of the dataset.
   * Include any data-accessibility issues encountered or anticipated.
+
+The dataset is a collection of digitized black and white photos of Boston that are owned by the NEU library. Presumably, high resolution versions of the photos we will use in our experimentation are available to download; however, downloads take a while so we can only work with small subsets of photos at once. Another limitation is the computing power of the environments we are using to run the pre-trained models. 
  
 ## Stakeholder feedback 
   * Briefly describe any feedback that you have received so far from your stakeholder.
