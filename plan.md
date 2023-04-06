@@ -2,7 +2,7 @@
 
 ## Goals
 
-This project aims to compare the image classifying capabilities of pre trained models using a collection of images from the Boston Globe. Of the available pre trained mdoels, we have decided to work on implementing VGG16, FastAI, and Google Vision and DeepFace for this project. There will be little, if any, training on the Boston Globe data set. We aim to compare the "out-of-the-box" capabilities of these pre trained models. A small subset of photos that have been previously run through AWS Rekognition by another team will be used as a form of accuracy /comparison check.
+This project aims to compare the image classifying capabilities of pre trained models using a collection of images from the Boston Globe and NEU library. Of the available pre trained mdoels, we have decided to work on implementing VGG16, FastAI, Google Vision and DeepFace for this project. There will be little, if any, training on the Boston Globe data set. We aim to compare the "out-of-the-box" capabilities of these pre trained models. A small subset of photos that have been previously run through AWS Rekognition by another team will be used as a form of accuracy / comparison check.
 
 ## Data
   * Description of the dataset.
