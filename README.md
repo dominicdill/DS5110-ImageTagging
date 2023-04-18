@@ -32,8 +32,7 @@ I did this with both all of the words and the meta data as a whole. After manual
 provide better classification for the rest of the data that the Northeastern University Library  has. These were 
 
 
-```newclasses = ["HighSchool", "Skyline", "Police", "Busing", "Court", "Low-income","Celtics",
-         "Lawyer", "arrest", "Protest", "housing", "Fire"  ]```
+```newclasses = ["HighSchool", "Skyline", "Police", "Busing", "Court", "Low-income","Celtics", "Lawyer", "arrest", "Protest", "housing", "Fire"  ]```
          
 
 With these classes I was able to have access to automated labeled data since I would be able to see get all images related to meta data that included these words. 
@@ -42,6 +41,8 @@ as well as a model that could be updated pretty seamlessly. [Vertex Ai](https://
 for this project since they have a 90 day free trial with $300 free data storage. In order to actually use Vertex, a jsonl file must be made. A jsonl file is similar to a json file, since they
 both use dictionaries to store and relate data. Instead of being in a list however, the different objects are separate by line. The jsonl file for the upload and testing and training split has to look
 like the example below and the creation of this file was also automated:
+
+
 ```
 {"imageGcsUri": "gs://bucket/filename1.jpeg",  "classificationAnnotation": {"displayName": "daisy"}, "dataItemResourceLabels": {"aiplatform.googleapis.com/ml_use": "test"}}
 {"imageGcsUri": "gs://bucket/filename2.gif",  "classificationAnnotation": {"displayName": "dandelion"}, "dataItemResourceLabels": {"aiplatform.googleapis.com/ml_use": "training"}}
