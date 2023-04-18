@@ -58,7 +58,7 @@ There is a good tutorial on how to do this from a Youtube channel [Python 360](h
  
 Since the actual images from Google were not the best, and I mislabeled some of the data on accident, the model was not perfect as seen by the confusion matrix below. 
 
-![img](fis/covMatrix.png)
+![](figs/covMatrix.png)
 
 Vertex does allow for changing of confidence thresholds and this allowed the model to perform a little better. With a threshold of 0.87, the model had 100% precision and 77.8% recall. A high precision like this
 means that there was no false negatives, and a high recall means that there were 22.2% false positives. This does mean that the moel is not the best, but could still provide some sort of help. 
