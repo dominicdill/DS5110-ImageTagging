@@ -11,7 +11,17 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alexey, Casey, and Dominic have each attempted to automate the tagging of these images through the use of pre trained models. Fast AI, Google Vision, and DeepFace were the tools of choice, and a brief description of the outcome can be found below.
 
 ## #1 - Fast AI - Casey
-to do - intro to your part
+
+Fast.AI is a non-profit research group with the stated goal of democratizing deep learning. To that end, their fast.ai python library, built on top of pytorch, makes it faster and easier to train custom deep learning models.
+
+My initial takeaway when reviewing the subset of images shared by the stakeholder was that most of the photos were of the Boston skyline/architecture or of people. Therefore, my goal was to tune a pre-trained convolution neural net model with images downloaded from the internet in order to build an image classifier that could distinguish between photos of the Boston skyline and photos of people. A full [step-by-step walkthrough of how I trained this model is in this notebook](https://colab.research.google.com/drive/1P9oA3e6EKafKrL6b-Lht6NLPjirHqpTg#scrollTo=VUgLosvEwKjS). 
+
+The code to build and export the model is also located in the source directory. However, it is recommended by the Fast AI developers that deep learning models are trained on cloud servers. Furthermore, the package provides an easy-to-use GUI through Jupyter notebooks that allow users to select images in the training dataset to remove or relabel with the click of a mouse. 
+
+Insert instructions below to import pickled model, classify Boston photos, and create a dataframe of the probability tensors to aid with further analysis and data cleaning......
+
+<img src="figs/skyline_prediction.png">
+
 ## #2 - Google Vision - Alexey
 
 
