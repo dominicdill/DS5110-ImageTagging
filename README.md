@@ -79,7 +79,7 @@ If one does have access to the thumbnail data and can figure out how to not corr
 	- ```python src/vertex/foldercreation.py #First need to change the newcclasses list with your updated classes ```
 	- ```python src/vertex/jsonl_maker.py #To create jsonl file```
 - Then you would need to go to the vertex website linked above create an account and then upload the classes foler into a google cloud bucket. 
--Then using the jsonl file on the upload page of the vertex training, you can choose your training test validation data points.
+- Then using the jsonl file on the upload page of the vertex training, you can choose your training test validation data points.
 - Then train the model with minimum 8 node hours
 
 
