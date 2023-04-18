@@ -1,5 +1,5 @@
 .ipynb
-.ipynb_checkpoints
+.pkl
 /data/**
 !/data/**/
 !/data/**/.gitkeep
