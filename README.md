@@ -20,7 +20,7 @@ The code to build and export the model is also located in the source directory. 
 
 Insert instructions below to import pickled model, classify Boston photos, and create a dataframe of the probability tensors to aid with further analysis and data cleaning......
 
-<img src="figs/skyline_prediction.png">
+<img src="figs/skyline_prediction.PNG">
 
 ## #2 - Google Vision - Alexey
 
