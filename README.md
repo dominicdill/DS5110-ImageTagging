@@ -32,7 +32,7 @@ The trained model is remarkably accurate in predicting whether photos in the Bos
 
 The [notebook](https://colab.research.google.com/drive/1-qPJ6nsIqgH9fXzIPxNJPBX0H6dmnE3S#scrollTo=wtCuX1_r-0s5) contains predictions for all 400+ images in the "Subset Images" folder of the provided Boston photo set. Below are a few examples of correctly classifed images.
 
-<img src="figs/skyline_prediction.PNG">
+<img src="figs/skyline_prediction.PNG" width=50% height=50% >
 
 <img src="figs/skyline_prediction2.PNG">
 
@@ -48,13 +48,13 @@ make fastai_preds
 
 There are two different ways that this model is limited. Although this model is remarkably accurate in its ability to correctly tell the difference between photos of buildings and people, it was not 100% accurate in classifying the images in the Boston photo subset. For example, below is an image of people classified as a city skyline.
 
-<img src = "figs/wrong_pred1>
+<img src = "figs/wrong_pred1">
 
 The foremost limitation, however, is that the model only predicts between two classes, so every photo run through the model will be classified as a city skyline or person. Although those classes made up a sizeable majority of the Boston photos, the model as it currently exists is useless when it comes to classify other types of images. Examples are displayed below. 
 
-<img src = "figs/wrong_pred2>
+<img src = "figs/wrong_pred2">
 
-<img src = "figs/wrong_pred3>
+<img src = "figs/wrong_pred3">
 
 ### Future work
 
