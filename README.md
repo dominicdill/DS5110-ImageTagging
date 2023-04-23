@@ -36,11 +36,16 @@ The [notebook](https://colab.research.google.com/drive/1-qPJ6nsIqgH9fXzIPxNJPBX0
 
 <img src="figs/skyline_prediction2.PNG">
 
-<img src="figs/person_prediction2.PNG">
+<img src="figs/person_prediction.PNG">
+
+Provided you install the FastAI package first, a python file is located in /src/fastai/ that can generate a pandas dataframe with predictions for any images saved in /data/all_images. The dataframe where each row has the predicted class, the name of the image, and the probability it belongs to each class. This allows for further analysis and cleaning of the predicted dataset. For example, if we wanted to remove or manually reclassify images that fall below a certain probability threshold, the dataframe allows for easy implementation.
+
+```
+make fastai_preds
+```
 
 
 
-Insert instructions to create a dataframe of the probability tensors to aid with further analysis and data cleaning......
 
 
 
