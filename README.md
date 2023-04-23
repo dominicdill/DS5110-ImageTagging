@@ -14,13 +14,35 @@
 
 Fast.AI is a non-profit research group with the stated goal of democratizing deep learning. To that end, their fast.ai python library, built on top of pytorch, makes it faster and easier to train custom deep learning models.
 
-My initial takeaway when reviewing the subset of images shared by the stakeholder was that most of the photos were of the Boston skyline/architecture or of people. Therefore, my goal was to tune a pre-trained convolution neural net model with images downloaded from the internet in order to build an image classifier that could distinguish between photos of the Boston skyline and photos of people. A full [step-by-step walkthrough of how I trained this model is in this notebook](https://colab.research.google.com/drive/1P9oA3e6EKafKrL6b-Lht6NLPjirHqpTg#scrollTo=VUgLosvEwKjS). 
+My initial takeaway when reviewing the subset of images shared by the stakeholder was that most of the photos were of the Boston skyline/architecture or of people. Therefore, my goal was to tune a pre-trained convolution neural net model with images downloaded from the internet in order to build an image classifier that could distinguish between photos of the Boston skyline and photos of people. A full [step-by-step walkthrough of how I trained this model is in this notebook](https://colab.research.google.com/drive/1-qPJ6nsIqgH9fXzIPxNJPBX0H6dmnE3S#scrollTo=wtCuX1_r-0s5). 
 
-The code to build and export the model is also located in the source directory. However, it is recommended by the Fast AI developers that deep learning models are trained on cloud servers. Furthermore, the package provides an easy-to-use GUI through Jupyter notebooks that allow users to select images in the training dataset to remove or relabel with the click of a mouse. 
+The code to build and export the model is also located in the source directory. However, it is recommended by the Fast AI developers that deep learning models are trained on cloud servers with access to a GPU. Furthermore, the package provides an easy-to-use GUI through Jupyter notebooks that allow users to select images in the training dataset to remove or relabel with the click of a mouse. 
 
-Insert instructions below to import pickled model, classify Boston photos, and create a dataframe of the probability tensors to aid with further analysis and data cleaning......
+After training the model by following the demo in the [notebook](https://colab.research.google.com/drive/1-qPJ6nsIqgH9fXzIPxNJPBX0H6dmnE3S#scrollTo=wtCuX1_r-0s5), it is possible to export the model and save to a pickle file. Once it is saved, it can be imported to any python environment without the need for a powerful GPU.
+
+```
+learn.export()
+path = Path()
+path.ls(file_exts='.pkl')
+learn_inf = load_learner(path/'export.pkl')
+```
+### Classifying Boston photos
+
+The trained model is remarkably accurate in predicting whether photos in the Boston image dataset are of buildings or of people. The prediction includes a tensor of probabilities between 0 and 1 that the image belongs to either of the two classes.
+
+The [notebook](https://colab.research.google.com/drive/1-qPJ6nsIqgH9fXzIPxNJPBX0H6dmnE3S#scrollTo=wtCuX1_r-0s5) contains predictions for all 400+ images in the "Subset Images" folder of the provided Boston photo set. Below are a few examples of correctly classifed images.
 
 <img src="figs/skyline_prediction.PNG">
+
+<img src="figs/skyline_prediction2.PNG">
+
+<img src="figs/person_prediction2.PNG">
+
+
+
+Insert instructions to create a dataframe of the probability tensors to aid with further analysis and data cleaning......
+
+
 
 ## #2 - Google Vision - Alexey
 
