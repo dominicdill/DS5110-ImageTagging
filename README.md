@@ -38,15 +38,27 @@ The [notebook](https://colab.research.google.com/drive/1-qPJ6nsIqgH9fXzIPxNJPBX0
 
 <img src="figs/person_prediction.PNG">
 
-Provided you install the FastAI package first, a python file is located in /src/fastai/ that can generate a pandas dataframe with predictions for any images saved in /data/all_images. The dataframe where each row has the predicted class, the name of the image, and the probability it belongs to each class. This allows for further analysis and cleaning of the predicted dataset. For example, if we wanted to remove or manually reclassify images that fall below a certain probability threshold, the dataframe allows for easy implementation.
+Provided you install the FastAI package first, a python file is located in ```/src/fastai/``` that can generate a pandas dataframe with predictions for any images saved in ```/data/all_images```. The dataframe where each row has the predicted class, the name of the image, and the probability it belongs to each class. This allows for further analysis and cleaning of the predicted dataset. For example, if we wanted to remove or manually reclassify images that fall below a certain probability threshold, the dataframe allows for easy implementation.
 
 ```
 make fastai_preds
 ```
 
+### Limitations
 
+There are two different ways that this model is limited. Although this model is remarkably accurate in its ability to correctly tell the difference between photos of buildings and people, it was not 100% accurate in classifying the images in the Boston photo subset. For example, below is an image of people classified as a city skyline.
 
+<img src = "figs/wrong_pred1>
 
+The foremost limitation, however, is that the model only predicts between two classes, so every photo run through the model will be classified as a city skyline or person. Although those classes made up a sizeable majority of the Boston photos, the model as it currently exists is useless when it comes to classify other types of images. Examples are displayed below. 
+
+<img src = "figs/wrong_pred2>
+
+<img src = "figs/wrong_pred3>
+
+### Future work
+
+Future iterations of this model could include more classes of things that appear in the Boston photos. Alternatively or in addition, predictions could include an "other" class for any probabilities that fall below a given threshold. 
 
 
 ## #2 - Google Vision - Alexey
