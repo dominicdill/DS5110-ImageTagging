@@ -11,7 +11,56 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alexey, Casey, and Dominic have each attempted to automate the tagging of these images through the use of pre trained models. Fast AI, Google Vision, and DeepFace were the tools of choice, and a brief description of the outcome can be found below.
 
 ## #1 - Fast AI - Casey
-to do - intro to your part
+
+Fast.AI is a non-profit research group with the stated goal of democratizing deep learning. To that end, their fast.ai python library, built on top of pytorch, makes it faster and easier to train custom deep learning models.
+
+My initial takeaway when reviewing the subset of images shared by the stakeholder was that most of the photos were of the Boston skyline/architecture or of people. Therefore, my goal was to tune a pre-trained convolution neural net model with images downloaded from the internet in order to build an image classifier that could distinguish between photos of the Boston skyline and photos of people. A full [step-by-step walkthrough of how I trained this model is in this notebook](https://colab.research.google.com/drive/1-qPJ6nsIqgH9fXzIPxNJPBX0H6dmnE3S). The notebook borrows inspiration and code from the excellent [Fastai course book](https://github.com/fastai/fastbook) by Jeremy Howard and Sylvain Gugger.
+
+The code to build and export the model is also located in the ```\src\fastai``` directory, as is a copy of the notebook. However, it is recommended by the Fast AI developers that deep learning models are trained on cloud servers with access to a GPU. Furthermore, the package provides an easy-to-use GUI through Jupyter notebooks that allow users to select images in the training dataset to remove or relabel with the click of a mouse. 
+
+After training the model by following the demo in the [notebook](https://colab.research.google.com/drive/1-qPJ6nsIqgH9fXzIPxNJPBX0H6dmnE3S), it is possible to export the model and save to a pickle file. Once it is saved, it can be imported to any python environment without the need for a powerful GPU.
+
+```
+learn.export()
+path = Path()
+path.ls(file_exts='.pkl')
+learn_inf = load_learner(path/'export.pkl')
+```
+### Classifying Boston photos
+
+The trained model is remarkably accurate in predicting whether photos in the Boston image dataset are of buildings or of people. The prediction includes a tensor of probabilities between 0 and 1 that the image belongs to either of the two classes.
+
+The [notebook](https://colab.research.google.com/drive/1-qPJ6nsIqgH9fXzIPxNJPBX0H6dmnE3S#scrollTo=wtCuX1_r-0s5) contains predictions for all 400+ images in the "Subset Images" folder of the provided Boston photo set. Below are a few examples of correctly classifed images.
+
+<img src="figs/skyline_prediction.PNG" width=60% height=60% >
+
+<img src="figs/skyline_prediction2.PNG" width=60% height=60%>
+
+<img src="figs/person_prediction.PNG" width=60% height=60%>
+
+Provided you install the FastAI package first, a python file is located in ```/src/fastai/``` that can generate a pandas dataframe with predictions for any images saved in ```/data/all_images```. The dataframe where each row has the predicted class, the name of the image, and the probability it belongs to each class. This allows for further analysis and cleaning of the predicted dataset. For example, if we wanted to remove or manually reclassify images that fall below a certain probability threshold, the dataframe allows for easy implementation.
+
+```
+make fastai_preds
+```
+
+### Limitations
+
+There are two different ways that this model is limited. Although this model is remarkably accurate in its ability to correctly tell the difference between photos of buildings and people, it was not 100% accurate in classifying the images in the Boston photo subset. For example, below is an image of people classified as a city skyline.
+
+<img src = "figs/wrong_pred1.PNG" width=60% height=60%>
+
+The foremost limitation, however, is that the model only predicts between two classes, so every photo run through the model will be classified as a city skyline or person. Although those classes made up a sizeable majority of the Boston photos, the model as it currently exists is useless when it comes to classify other types of images. Examples are displayed below. 
+
+<img src = "figs/wrong_pred2.PNG" width=60% height=60%>
+
+<img src = "figs/wrong_pred3.PNG" width=60% height=60%>
+
+### Future work
+
+Future iterations of this model could include more classes of things that appear in the Boston photos. Alternatively or in addition, predictions could include an "other" class for any probabilities that fall below a given threshold. 
+
+
 ## #2 - Google Vision - Alexey
 
 
@@ -115,7 +164,7 @@ for faces. It will then create a `.csv` file with the face counts for each image
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facial detection is computationally expensive. Initial testing with images from the dataset, which are very high resolution and on the order of 100mb to 300mb, shows that detection times can range from 100s of milliseconds to 10+ seconds per image. OpenCV's haar-cascade algorithm is comparatively quick, but the speed comes with a decrease in the ability to correctly detect faces. [For comparison](https://sefiks.com/2020/08/25/deep-face-detection-with-opencv-in-python/), the ssd method is faster, but even worse at detecting faces, while the mtcnn method is slower, but more accurate. For a more detailed inspection of this, refer to `/src/deepface/DemoNotebooks/FaceDetectorDemoWithBoxes.ipynb`  
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facial detection is only the first step in the 4 step process that is known as facial recognition. Recognition requires not only facial detection, but identification. To accomplish this, known faces are usually stored as vector representations, and then compared against the vector representation of a detected face. If the difference between the two is below a certain threshold, then the detected face becomes recognized. DeepFace's `DeepFace.find()` allows for this to be accomplished with only a few lines of code. The default functionality utilizes the pre-trained openCV haar-cascade and VGG-Face models and cosine similarity to assess vector differences. An example of this can be found in the `/src/deepface/SearchFunctions/facesearch.py` script, which will search through the image files placed in `/data/all_images/` and check them against images of known faces in the `/data/deepface_known_faces/`. A `.csv` file will then be created associating images of unknown faces with the images of known faces.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facial detection is only the first step in the 4 step process that is known as facial recognition. Recognition requires not only facial detection, but identification. To accomplish this, known faces are usually stored as vector representations, and then compared against the vector representation of a detected face. If the difference between the two is below a certain threshold, then the detected face becomes recognized. DeepFace's `DeepFace.find()` allows for this to be accomplished with only a few lines of code. The default functionality utilizes the pre-trained openCV haar-cascade and VGG-Face models and cosine similarity to assess vector differences. An example of this can be found in the `/src/deepface/SearchFunctions/facesearch.py` script, which will search through the image files placed in `/data/all_images/` and check them against images of known faces in the `/data/deepface_known_faces/`. A `.csv` file will then be created associating images of unknown faces with the images of known faces. For an easier to follow demo, take a look at `/src/deepface/DemoNotebooks/FindFaces.ipynb`
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Future prospects: Through the use of facial recognition, we are able to use any facial image as a query for images containing similar faces. In this case, we could quickly identify images that possibly contain faces of any known perosn, as long as we have a facial image of that person. For example, if all of the photos from this dataset were run through a facial recognition pipeline, then it would be possible to use facial images from outside the dataset to identify images within the dataset that contain similar faces. For more information, see [Deep Face Recognition with Relational Databases and SQL](https://sefiks.com/2021/02/06/deep-face-recognition-with-sql/).
 
